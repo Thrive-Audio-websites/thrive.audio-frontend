@@ -1,4 +1,4 @@
-function test() {
+function scroll_to_products() {
     //document.getElementById("test").scrollIntoView(true);
     //window.scroll({top:895, behavior: 'smooth'})
     window.scrollBy(0, document.getElementById("first-product").getBoundingClientRect().top-60);
