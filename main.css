@@ -1,0 +1,199 @@
+:root {
+    --main: #2a2a2a;
+}
+
+::-webkit-scrollbar {
+    width: 15px;               /* width of the entire scrollbar */
+}
+  
+::-webkit-scrollbar-track {
+    background: #1a1a1a;        /* color of the tracking area */
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #3a3a3a;    /* color of the scroll thumb */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}  
+
+h1, h2, h3, h4, h5, p {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+}
+
+.top {
+    background-image: url("images/DC_offs_filter_02.JPG");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.par2 {
+    background-image: url("images/Elite_240_2_RA.JPG");
+    height: 50%;
+    background-attachment: fixed;
+    background-position-y: top;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.blanket {
+    background-color: rgba(0, 0, 0, 60%);
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-img {
+    height: 50%;
+}
+
+.title {
+    font-size: 3em;
+}
+
+.contact {
+    margin: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 85%);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+}
+
+.menu-item {
+    height: 40px;
+    border-right: solid;
+    border-width: 1px;
+    color: white;
+}
+
+.menu-item>a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition-duration: 0.05s;
+}
+
+.menu-item>a:hover {
+    /*background-color: #3a3a3a;*/
+    background-color: rgba(255, 255, 255, 10%);
+}
+
+.menu>.menu-item:last-child {
+    border-right: none;
+}
+
+.bottom {
+    padding: 10px;
+}
+
+.body-color {
+    background-color: var(--main);
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.id {
+    opacity: 1;
+    height: 60px;
+}
+
+.up-button {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.button-hide {
+    transform: translate(0, 100px);
+    transition-duration: 0.5s;
+}
+
+.blanket.center {
+    height: 200px;
+    width: 550px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+.blanket.center p {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.product {
+    background-color: var(--main);
+    padding: 0px;
+}
+
+.product-title {
+    padding: 10px;
+}
+
+.product-image {
+    background-color: var(--main);
+    width: 600px;
+}
+
+.product-background {
+    /*background-image: linear-gradient(90deg, white, #2a2a2a, #2a2a2a, #2a2a2a, #2a2a2a);*/
+    background-color: var(--main);
+    width: 100%;
+    height: 500px;
+}
+
+.footer {
+    width: 500px;
+    border-top: solid white 1px;
+    padding: 20px;
+    color: white;
+}
+
+.footer-small {
+    width: 500px;
+    border-top: none;
+    margin-top: -10px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 70%;
+}
