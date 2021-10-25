@@ -110,6 +110,28 @@ a {
     border-right: none;
 }
 
+.mobile-menu-button-background {
+    visibility: hidden;
+    background-color: var(--main);
+    position: fixed;
+    height: 150px;
+    width: 100%;
+}
+
+.menu-background-blur {
+    box-shadow: 0 2px 10px black;
+}
+
+.mobile-menu-button {
+    visibility: hidden;
+    color: white;
+    position: fixed;
+    width: 75px;
+    height: 60px;
+    top: 42px;
+    left: 40px;
+}
+
 .bottom {
     padding: 10px;
 }
@@ -196,4 +218,46 @@ a {
     padding-bottom: 20px;
     color: white;
     font-size: 70%;
+}
+
+@media only screen and (hover: none) and (pointer: coarse){
+    .up-button {
+        transform: translate(0, 100px);
+    }
+    .product-image {
+        width: 100%;
+    }
+    .mobile-menu-button-background {
+        visibility: visible;
+        transition-duration: 0.1s;
+    }
+    .mobile-menu-button-background-expanded {
+        height: 480px;
+        transition-duration: 0.1s;
+    }
+    .mobile-menu-button {
+        visibility: visible;
+    }
+    .menu {
+        flex-direction: column;
+        background-color: transparent;
+        width: 50%;
+        transform: translate(0, -200px);
+        transition-duration: 0.1s;
+    }
+    .menu-expanded {
+        transform: translate(0, 230px);
+        transition-duration: 0.1s;
+    }
+    .menu-item {
+        width: 100%;
+        padding: 30px;
+        border-width: 0;
+    }
+    .menu-item>a {
+        font-size: 2.5em;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
 }
