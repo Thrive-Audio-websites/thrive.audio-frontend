@@ -12,13 +12,17 @@ function scroll_to_products() {
 function menu_toggle() {
     let menu_background = document.getElementById("menu-background");
     let menu = document.getElementById("menu")
-    let menu_button = document.getElementById("menu_button")
+    let menu_button = document.getElementById("menu-button")
     if (menu.classList.contains("menu-expanded")) {
         menu.classList.remove("menu-expanded")
         menu_background.classList.remove("mobile-menu-button-background-expanded")
+        menu_button.setAttribute("src", "images/menu_button.png")
+        menu_button.classList.remove("mobile-menu-button-expanded")
     } else {
         menu.classList.add("menu-expanded")
         menu_background.classList.add("mobile-menu-button-background-expanded")
+        menu_button.setAttribute("src", "images/menu_button_close.png")
+        menu_button.classList.add("mobile-menu-button-expanded")
     }
 }
 

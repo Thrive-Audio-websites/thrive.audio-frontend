@@ -238,6 +238,15 @@ a {
     .mobile-menu-button {
         visibility: visible;
     }
+    .mobile-menu-button-expanded {
+        width: 65px;
+        left: 45px;
+    }
+    .mobile-menu-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .menu {
         flex-direction: column;
         background-color: transparent;
