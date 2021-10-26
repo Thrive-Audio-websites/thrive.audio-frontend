@@ -268,5 +268,7 @@ a {
         padding: 30px;
         border-radius: 20px;
     }
-
+    .product-title {
+        font-size: 2em;
+    }
 }
