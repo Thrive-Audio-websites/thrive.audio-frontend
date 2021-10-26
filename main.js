@@ -9,10 +9,11 @@ function scroll_to_products() {
     console.log(document.getElementById("first-product").getBoundingClientRect().top);
 }
 
+let menu_background = document.getElementById("menu-background");
+let menu = document.getElementById("menu")
+let menu_button = document.getElementById("menu-button")
+
 function menu_toggle() {
-    let menu_background = document.getElementById("menu-background");
-    let menu = document.getElementById("menu")
-    let menu_button = document.getElementById("menu-button")
     if (menu.classList.contains("menu-expanded")) {
         menu.classList.remove("menu-expanded")
         menu_background.classList.remove("mobile-menu-button-background-expanded")
