@@ -19,7 +19,7 @@
 $font-stack: Arial, Helvetica, sans-serif;
 
 :root {
-    --main: #2a2a2a;
+    --main: #000;
 }
 
 ::-webkit-scrollbar {
@@ -56,15 +56,28 @@ h1>a {
     text-decoration: none;
 }
 
+.body {
+    display: block;
+    margin: auto;
+    max-width: 1280px;
+}
+
+.back-img {
+    position: fixed;
+    width: 1280px;
+    top: 0;
+}
+
 .top {
     @extend %center;
-    background-image: url("images/DC_offs_filter_02.JPG");
+    background-image: url("images/front2.JPG");
     height: 100%;
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: white;
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: 1280px;
+    background-color: black;
+    max-width: 1280px;
 }
 
 .blanket {
@@ -89,31 +102,45 @@ h1>a {
     height: 50%;
 }
 
-.menu {
+.menu-container {
     @extend %center;
     @extend %row;
     background-color: rgba(0, 0, 0, 85%);
-    height: 60px;
-    width: 100%;
+    width: 1280px;
     position: fixed;
+    height: 60px;
+}
+
+.menu {
+    @extend %center;
+    @extend %row;
+    height: 60px;
+    max-width: 1280px;
 
 
     &-item {
         @extend %center;
+        @extend %column;
         height: 40px;
-        border-right: solid;
-        border-width: 1px;
         color: white;
+
+        &>.link-underline {
+            position: relative;
+            top: -10px;
+        }
+
+        &-separator {
+            height: 30px;
+            width: 1px;
+            background-color: white;
+        }
         
         &>a {
             font-family: $font-stack;
             font-size: 1em;
             text-decoration: none;
             color: white;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            margin: 20px;
             transition-duration: 0.05s;
 
             &:hover {
@@ -121,10 +148,16 @@ h1>a {
             }
         }
     }
+}
 
-    &>menu-item:last-child {
-        border-right: none;
-    }
+.link-underline {
+    height: 3px;
+    width: 10px;
+    background-color: white;
+}
+
+*:hover>.link-underline {
+    width: 100%;
 }
 
 .mobile-menu-button {
@@ -181,7 +214,8 @@ h1>a {
 
     &-image {
         background-color: var(--main);
-        width: 600px;
+        width: 800px;
+        border-radius: 5px;
     }
 
     &-background {
@@ -276,6 +310,20 @@ h1>a {
     }
 }
 
+@media only screen and (max-width: 1279px) {
+    .top {
+        background-size: 100%;
+    }
+
+    .menu-container {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+}
+
 
 @media only screen and (hover: none) and (pointer: coarse){
     %m-center {
@@ -285,6 +333,9 @@ h1>a {
     }
     p {
         font-size: 2em;
+    }
+    body {
+        width: 100%;
     }
     .up-button {
         transform: translate(0, 100px);
@@ -298,28 +349,32 @@ h1>a {
 
         &-title {
             font-size: 2em;
+            margin-left: 20px;
+            margin-right: 20px;
         }
     }
-    .mobile-menu {
+    .menu-container {
         @extend %m-center;
+        background-color: black;
+        height: 0;
+    }
 
-        &-button {
+    .mobile-menu-button {
+        visibility: visible;
+
+        &-expanded {
+            width: 65px;
+            left: 45px;
+        }
+
+        &-background {
             visibility: visible;
+            transition-duration: 0.1s;
+            border-bottom: 2px solid black;
 
             &-expanded {
-                width: 65px;
-                left: 45px;
-            }
-
-            &-background {
-                visibility: visible;
+                height: 480px;
                 transition-duration: 0.1s;
-                border-bottom: 2px solid black;
-
-                &-expanded {
-                    height: 480px;
-                    transition-duration: 0.1s;
-                }
             }
         }
     }
@@ -328,8 +383,9 @@ h1>a {
         flex-direction: column;
         background-color: transparent;
         width: 50%;
-        transform: translate(0, -200px);
+        transform: translate(0, -400px);
         transition-duration: 0.1s;
+        height: 100%;
         
         &-expanded {
             transform: translate(0, 230px);
@@ -340,6 +396,11 @@ h1>a {
             width: 100%;
             padding: 30px;
             border-width: 0;
+
+            &-separator {
+                visibility: hidden;
+                position: absolute;
+            }
 
             &>a {
                 font-size: 2.5em;
