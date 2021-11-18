@@ -1,4 +1,4 @@
-.footer-divider-container, .footer-design, .footer-copyright, .footer, .contact-form, .product-title, .menu-item, .menu, .menu-container, .blanket, .top {
+.footer-divider-container, .footer-design, .footer-copyright, .footer, .contact-form, .product-title, .menu-item > a, .menu, .menu-container, .blanket, .top {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
   flex-direction: row;
 }
 
-.footer, .contact-form, .review-card, .menu-item, .blanket {
+.footer, .contact-form, .review-card, .menu-item > a, .blanket {
   flex-direction: column;
 }
 
@@ -71,10 +71,10 @@ h1 > a {
 
 .top {
   background-image: url("images/front2.JPG");
-  height: 100%;
+  height: 1024px;
   background-attachment: fixed;
   background-position: center top;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: 1280px;
   background-color: black;
   max-width: 1280px;
@@ -90,8 +90,9 @@ h1 > a {
   border-width: 1px;
 }
 .blanket p {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-style: italic;
+  font-weight: 100;
   margin-top: -10px;
 }
 
@@ -100,7 +101,7 @@ h1 > a {
 }
 
 .menu-container {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: black;
   width: 1280px;
   position: fixed;
   height: 60px;
@@ -111,12 +112,9 @@ h1 > a {
   max-width: 1280px;
 }
 .menu-item {
-  height: 40px;
+  height: 100%;
   color: white;
-}
-.menu-item > .link-underline {
-  position: relative;
-  top: -10px;
+  margin: 20px;
 }
 .menu-item-separator {
   height: 30px;
@@ -128,21 +126,26 @@ h1 > a {
   font-size: 1em;
   text-decoration: none;
   color: white;
-  margin: 20px;
   transition-duration: 0.05s;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.menu-item > a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.menu-item > a > .link-underline {
+  position: relative;
+  align-self: start;
+  top: 4px;
 }
 
 .link-underline {
-  height: 3px;
-  width: 10px;
+  height: 2px;
+  width: 0;
   background-color: white;
+  transition-duration: 0.2s;
 }
 
-*:hover > .link-underline {
+a:hover > .link-underline {
   width: 100%;
+  transition-duration: 0.2s;
 }
 
 .mobile-menu-button {
@@ -172,16 +175,50 @@ h1 > a {
   width: 65px;
   height: 65px;
   bottom: 30px;
-  right: 30px;
+  transform: translateX(-150%);
   cursor: pointer;
   transition-duration: 0.5s;
+  border-radius: 50%;
 }
 
 .button-hide {
-  transform: translate(0, 100px);
+  transform: translate(-150%, 100px);
   transition-duration: 0.5s;
 }
 
+.arrows-container {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 1280px;
+}
+
+.down-arrow {
+  cursor: pointer;
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  transform: translateX(-50%);
+  bottom: 15px;
+  border-radius: 50%;
+  transition-duration: 1s;
+  -webkit-animation: bounce 2s infinite;
+}
+.down-arrow-hidden {
+  transform: translate(-50%, 120px);
+  transition-duration: 1s;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    bottom: 15px;
+  }
+  50% {
+    bottom: 22px;
+  }
+  100% {
+    bottom: 15px;
+  }
+}
 .product {
   background-color: var(--main);
   padding: 0px;
@@ -268,6 +305,7 @@ h1 > a {
 }
 @media only screen and (max-width: 1279px) {
   .top {
+    height: 80vw;
     background-size: 100%;
   }
 
@@ -276,6 +314,10 @@ h1 > a {
   }
 
   .menu {
+    width: 100%;
+  }
+
+  .arrows-container {
     width: 100%;
   }
 }
@@ -294,8 +336,17 @@ h1 > a {
     width: 100%;
   }
 
+  .top {
+    height: 70vh;
+    background-repeat: repeat-y;
+  }
+
   .up-button {
     transform: translate(0, 100px);
+  }
+
+  .down-arrow {
+    bottom: -100px;
   }
 
   .product {
@@ -341,7 +392,7 @@ h1 > a {
     height: 100%;
   }
   .menu-expanded {
-    transform: translate(0, 230px);
+    transform: translate(0, 180px);
     transition-duration: 0.1s;
   }
   .menu-item {
@@ -361,6 +412,10 @@ h1 > a {
   .menu-background-blur {
     box-shadow: 0 2px 10px black;
     border-bottom: none;
+  }
+
+  a:hover > .link-underline {
+    width: 0;
   }
 
   .contact {

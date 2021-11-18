@@ -45,4 +45,9 @@ function scroll_events() {
     } else {
         menu_background.classList.remove("menu-background-blur");
     }
+
+    let arrow = document.getElementById("down-arrow");
+    if (window.pageYOffset > 100) {
+        arrow.classList.add("down-arrow-hidden")
+    }
 }
