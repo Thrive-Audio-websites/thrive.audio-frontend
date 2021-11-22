@@ -260,8 +260,12 @@ a:hover>.link-underline {
 
     &-background {
         background-color: var(--main);
-        width: 100%;
+        color: white;
+        width: 90%;
         height: 500px;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: $font-stack;
     }
 }
 
